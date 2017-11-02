@@ -99,3 +99,15 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# Binaries
+.bin
+
+# Attempts
+*attempt*
+
+# Data's
+.csv
+
+# Secret's
+*secret*

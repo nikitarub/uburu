@@ -101,13 +101,18 @@ ENV/
 .mypy_cache/
 
 # Binaries
-.bin
+*.bin
 
 # Attempts
 *attempt*
 
 # Data's
 .csv
+*.sqlite3
 
 # Secret's
 *secret*
+
+# Settings
+*settings*
+

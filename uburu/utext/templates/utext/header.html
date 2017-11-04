@@ -1,0 +1,28 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Uburu</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    </head>
+
+    <header>
+
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #8dffd2;">
+            <a class="navbar-brand" href="#"><h2>ụbụrụ</h2></a>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" >(от</a>
+                    <a class="nav-item nav-link" href="https://ru.wikipedia.org/wiki/Игбо_(язык)" target="_blank"><i>игбо</i></a>
+                    <a class="nav-item nav-link active">—</a>
+                    <a class="nav-item nav-link active">мозг)</a>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    {% block content %}
+    {% endblock content %}
+</html>

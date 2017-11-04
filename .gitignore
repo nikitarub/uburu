@@ -115,3 +115,9 @@ ENV/
 
 # Settings
 *settings*
+
+# Styling
+*.css
+
+# Scripts
+*bootstrap*.js

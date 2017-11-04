@@ -1,0 +1,82 @@
+{% extends 'utext/header.html' %}
+
+
+<body>
+    {% block content %}
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm" title="Справка">
+                <hr class="first_line">
+                <article class="description">
+                    <h4>
+                        Поиск по наиболее подходящей информации по вашему тексту:
+                    </h4>
+                    <br>
+                    <hr class="second_line">
+                    <i>
+                        1) Введите ваш текст <br>
+                        <ul>(максимальное количество символов 15000)</ul>
+                    </i>
+                    <i>
+                        2) Введите ключевые слова <br>
+                        <ul>(максимальное количество символов 1000) <br>
+                        (несколько слов через пробел)</ul>
+                    </i>
+                    <i>
+                        • Или оставьте поле пустым <ul>ваш текст будет переработан, основываясь на статистику</ul>
+                    </i>
+                    <i>
+                        3) Нажмите "Запуск"
+                    </i>
+
+                </article>
+                <hr class="second_line">
+            </div>
+
+
+            <div class="col-sm-9">
+                <form action="/" method="POST">
+                    {% csrf_token %}
+                    <span class="forms col-lg-7 col-md-7 col-sm-6">
+                        <br>
+                        <h3 class="keywords" for="keywords"><h3>Ключевые слова</h3></label></br>
+                        <div class="input-group">
+                            <input id="keywords" name="keywords" type="text" class="form-control"
+                                   placeholder="Несколько слов – через пробел"
+                                   aria-label="Несколько слов – через пробел"
+                                   value="{{ keywords }}"/>
+                            <span class="input-group-btn">
+
+                                <input class="submit btn btn-secondary" role="button" type="submit" value="Запуск">
+                            </span>
+                        </div>
+
+
+                        <br>
+                        <label class="txt" for="text" ><h3>Ваш Текст: </h3></label>
+                        <textarea class="form-control" id="text" rows="5" name="text"
+                                  placeholder="Максимально 15000 символов"
+                                  required>{{ text }}</textarea>
+
+                        <br>
+                        <input class="submit btn btn-primary" role="button" type="submit" value="Запуск">
+                    </span>
+                </form>
+                <br>
+                <form action="/" method="POST">
+                    {% csrf_token %}
+                    <span class="forms col-lg-8 col-md-8 col-sm-8 col-xs-5">
+                    {% for line in out_data %}
+                        {{ line }} <br>
+                    {% endfor %}
+                    </span>
+
+              </form>
+            </div>
+        </div>
+    </div>
+
+    {% endblock content %}
+</body>
